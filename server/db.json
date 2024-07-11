@@ -1,0 +1,1395 @@
+{
+  "assets": [
+    {
+      "slno": 3,
+      "productid": "111222121212",
+      "Producttype": "Laptop",
+      "Productmodel": "er",
+      "Productstatus": "Active",
+      "empid": "qwaszx",
+      "productbrand": "wq",
+      "productserialno": "23"
+    },
+    {
+      "slno": 5423,
+      "productid": "120956",
+      "Producttype": "Laptop",
+      "Productmodel": "we2390",
+      "Productstatus": "Available",
+      "empid": "emp09876",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 5464,
+      "productid": "122121212e",
+      "Producttype": "Mouse",
+      "Productmodel": "deded333",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 909,
+      "productid": "1233",
+      "Producttype": null,
+      "Productmodel": "122334",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "jp",
+      "productserialno": "21212121212121212121"
+    },
+    {
+      "slno": 5425,
+      "productid": "12904537",
+      "Producttype": "Laptop",
+      "Productmodel": "hpnew",
+      "Productstatus": "Active",
+      "empid": "hpnew123",
+      "productbrand": "hpnew3",
+      "productserialno": "hpnew55"
+    },
+    {
+      "slno": 22222,
+      "productid": "211113",
+      "Producttype": "Laptop",
+      "Productmodel": "411",
+      "Productstatus": "Active",
+      "empid": "125698",
+      "productbrand": "hp",
+      "productserialno": "1213445"
+    },
+    {
+      "slno": 54367,
+      "productid": "23er",
+      "Producttype": "Laptop",
+      "Productmodel": "dsdsdsdsdsds",
+      "Productstatus": "Active",
+      "empid": "sx32",
+      "productbrand": "1244232d",
+      "productserialno": "12sx3"
+    },
+    {
+      "slno": 167,
+      "productid": "23w",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "wwww",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 312,
+      "productid": "32uye",
+      "Producttype": "Laptop",
+      "Productmodel": "32ytr",
+      "Productstatus": "Active",
+      "empid": "eny7",
+      "productbrand": "youtube",
+      "productserialno": "tyt6"
+    },
+    {
+      "slno": 5424,
+      "productid": "42345",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "fr45",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 3267,
+      "productid": "4321w",
+      "Producttype": "Mouse",
+      "Productmodel": "2134rty",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 317,
+      "productid": "432w",
+      "Producttype": "Charger",
+      "Productmodel": "2134rty",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 91,
+      "productid": "51",
+      "Producttype": "Laptop",
+      "Productmodel": "121",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "er",
+      "productserialno": "216"
+    },
+    {
+      "slno": 993287,
+      "productid": "a32b",
+      "Producttype": "Mouse",
+      "Productmodel": "keuso",
+      "Productstatus": "Active",
+      "empid": "su222dokuuuuuu126",
+      "productbrand": "kela",
+      "productserialno": "sdsds5"
+    },
+    {
+      "slno": 899,
+      "productid": "a399",
+      "Producttype": "Charger",
+      "Productmodel": "kuso",
+      "Productstatus": "Active",
+      "empid": "sudoku126",
+      "productbrand": "kela",
+      "productserialno": "sdsds5"
+    },
+    {
+      "slno": 89987,
+      "productid": "a3b99",
+      "Producttype": "Charger",
+      "Productmodel": "keuso",
+      "Productstatus": "Active",
+      "empid": "sudokuuuu126",
+      "productbrand": "kela",
+      "productserialno": "sdsds5"
+    },
+    {
+      "slno": 4,
+      "productid": "asdasdas",
+      "Producttype": null,
+      "Productmodel": "dsadas",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "dsdsd123",
+      "productserialno": "333333"
+    },
+    {
+      "slno": 118,
+      "productid": "atr3",
+      "Producttype": "Laptop",
+      "Productmodel": "kuso",
+      "Productstatus": "Active",
+      "empid": "sudo",
+      "productbrand": "kela",
+      "productserialno": "sdsds"
+    },
+    {
+      "slno": 1189,
+      "productid": "atr39",
+      "Producttype": "Laptop",
+      "Productmodel": "kuso",
+      "Productstatus": "Active",
+      "empid": "sudo12",
+      "productbrand": "kela",
+      "productserialno": "sdsds"
+    },
+    {
+      "slno": 11899,
+      "productid": "atr399",
+      "Producttype": "Mouse",
+      "Productmodel": "kuso",
+      "Productstatus": "Active",
+      "empid": "sudo126",
+      "productbrand": "kela",
+      "productserialno": "sdsds5"
+    },
+    {
+      "slno": 10000,
+      "productid": "bjqwbs",
+      "Producttype": null,
+      "Productmodel": "bjsqws",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "bgxqkj",
+      "productserialno": "xxq,x"
+    },
+    {
+      "slno": 233333,
+      "productid": "d3",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 154,
+      "productid": "dasdasdasd",
+      "Producttype": "Laptop",
+      "Productmodel": "dasdasdasdasdasdasdas",
+      "Productstatus": "Defective",
+      "empid": null,
+      "productbrand": "23fv",
+      "productserialno": "ee2"
+    },
+    {
+      "slno": 1000001,
+      "productid": "dasdasdasdas",
+      "Producttype": "Laptop",
+      "Productmodel": "nipa",
+      "Productstatus": "Active",
+      "empid": "atot",
+      "productbrand": "hp",
+      "productserialno": "123123"
+    },
+    {
+      "slno": 8,
+      "productid": "dwd",
+      "Producttype": "Laptop",
+      "Productmodel": "jro3r",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "fwf",
+      "productserialno": "fwf"
+    },
+    {
+      "slno": 89,
+      "productid": "eqweqwe",
+      "Producttype": null,
+      "Productmodel": "dq",
+      "Productstatus": "Available",
+      "empid": null,
+      "productbrand": "wqwq",
+      "productserialno": "wqqw"
+    },
+    {
+      "slno": 33333311,
+      "productid": "ewq",
+      "Producttype": "Laptop",
+      "Productmodel": "we",
+      "Productstatus": "Active",
+      "empid": "werwqg",
+      "productbrand": "er",
+      "productserialno": ""
+    },
+    {
+      "slno": 50,
+      "productid": "g50",
+      "Producttype": "Laptop",
+      "Productmodel": "g90",
+      "Productstatus": "Active",
+      "empid": "g50s2",
+      "productbrand": "g50s",
+      "productserialno": ""
+    },
+    {
+      "slno": 419,
+      "productid": "gddd12",
+      "Producttype": "Charger",
+      "Productmodel": "",
+      "Productstatus": "Available",
+      "empid": "emp0000008",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 900,
+      "productid": "gdudj",
+      "Producttype": "Laptop",
+      "Productmodel": "hdd",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "ghjd",
+      "productserialno": "bjkq"
+    },
+    {
+      "slno": 786,
+      "productid": "gf32",
+      "Producttype": "Mouse",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "wert45",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 11,
+      "productid": "gg",
+      "Producttype": null,
+      "Productmodel": "dw",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "dewd",
+      "productserialno": "dwqd"
+    },
+    {
+      "slno": 8709432,
+      "productid": "ghhghghgh7",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "fx3",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 5999,
+      "productid": "harsita",
+      "Producttype": "Laptop",
+      "Productmodel": "harsitra",
+      "Productstatus": "Active",
+      "empid": "19",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 4999,
+      "productid": "hi",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "qd",
+      "productbrand": "nkew",
+      "productserialno": "wed"
+    },
+    {
+      "slno": 1000000,
+      "productid": "hjq",
+      "Producttype": "Laptop",
+      "Productmodel": "xnbsx",
+      "Productstatus": "Defective",
+      "empid": "bxmawxs",
+      "productbrand": "xx masx",
+      "productserialno": "bxjma"
+    },
+    {
+      "slno": 10,
+      "productid": "hke",
+      "Producttype": "Laptop",
+      "Productmodel": "bhde",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "cnwle",
+      "productserialno": "njnklewed"
+    },
+    {
+      "slno": 99,
+      "productid": "HP2819",
+      "Producttype": "Laptop",
+      "Productmodel": "HPNext456",
+      "Productstatus": "Available",
+      "empid": null,
+      "productbrand": "HP",
+      "productserialno": "HP12345678"
+    },
+    {
+      "slno": 2073,
+      "productid": "HPPAV12",
+      "Producttype": "Laptop",
+      "Productmodel": "HPPAV128",
+      "Productstatus": "Defective",
+      "empid": null,
+      "productbrand": "HPSpeakers",
+      "productserialno": "HPPAV34"
+    },
+    {
+      "slno": 56,
+      "productid": "hrx34",
+      "Producttype": null,
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "Boat",
+      "productserialno": "78vvgg"
+    },
+    {
+      "slno": 454,
+      "productid": "HT67",
+      "Producttype": null,
+      "Productmodel": "SONY",
+      "Productstatus": "Available",
+      "empid": null,
+      "productbrand": "SONY",
+      "productserialno": "SHGv"
+    },
+    {
+      "slno": 333,
+      "productid": "Hu67",
+      "Producttype": "Mouse",
+      "Productmodel": "Hp777",
+      "Productstatus": "Active",
+      "empid": "987867878",
+      "productbrand": "HP12",
+      "productserialno": "7899"
+    },
+    {
+      "slno": 8156,
+      "productid": "ker1",
+      "Producttype": "Charger",
+      "Productmodel": "erty",
+      "Productstatus": "Active",
+      "empid": "wemi888",
+      "productbrand": "frty",
+      "productserialno": ""
+    },
+    {
+      "slno": 10987,
+      "productid": "new1",
+      "Producttype": "Charger",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": "derty122",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 1,
+      "productid": "P001",
+      "Producttype": "Mouse",
+      "Productmodel": "Logitech MX Master",
+      "Productstatus": "Active",
+      "empid": "adty90",
+      "productbrand": "Logitech",
+      "productserialno": "LM3654321"
+    },
+    {
+      "slno": 1213,
+      "productid": "P0010",
+      "Producttype": "Mouse",
+      "Productmodel": "Logitech",
+      "Productstatus": "Active",
+      "empid": "Deba7712",
+      "productbrand": "Logitech",
+      "productserialno": "g102"
+    },
+    {
+      "slno": 12,
+      "productid": "P0012",
+      "Producttype": "Mouse",
+      "Productmodel": "Logitech",
+      "Productstatus": "Active",
+      "empid": "Deba77",
+      "productbrand": "Logitech",
+      "productserialno": "g102"
+    },
+    {
+      "slno": 5,
+      "productid": "P002",
+      "Producttype": "Mouse",
+      "Productmodel": "Logitech MX Master",
+      "Productstatus": "Available",
+      "empid": "adty90",
+      "productbrand": "Logitech",
+      "productserialno": "LM3654321"
+    },
+    {
+      "slno": 123,
+      "productid": "p004",
+      "Producttype": "Laptop",
+      "Productmodel": "HP09",
+      "Productstatus": "Active",
+      "empid": "ind32",
+      "productbrand": "HP",
+      "productserialno": "HP9043"
+    },
+    {
+      "slno": 1210000010,
+      "productid": "P006",
+      "Producttype": "Laptop",
+      "Productmodel": "Dell XPS 13",
+      "Productstatus": "Active",
+      "empid": "adt",
+      "productbrand": "Dell",
+      "productserialno": "DX13-123456"
+    },
+    {
+      "slno": 1210000011,
+      "productid": "P007",
+      "Producttype": "Charger",
+      "Productmodel": "Dell9008",
+      "Productstatus": "Defective",
+      "empid": "emp009",
+      "productbrand": "Dell",
+      "productserialno": "DELLG8"
+    },
+    {
+      "slno": 1210000027,
+      "productid": "P0077",
+      "Producttype": "Laptop",
+      "Productmodel": "Dell9008",
+      "Productstatus": "Active",
+      "empid": "emp0097",
+      "productbrand": "Dell",
+      "productserialno": "DELLG8"
+    },
+    {
+      "slno": 1210000029,
+      "productid": "P00773",
+      "Producttype": "Charger",
+      "Productmodel": "Dell9008",
+      "Productstatus": "Active",
+      "empid": "emp0097",
+      "productbrand": "Dell",
+      "productserialno": "DELLG8"
+    },
+    {
+      "slno": 1210000012,
+      "productid": "p0098",
+      "Producttype": "Laptop",
+      "Productmodel": "fr3333",
+      "Productstatus": "Active",
+      "empid": "ewew222",
+      "productbrand": "dsdd33",
+      "productserialno": "frreee222"
+    },
+    {
+      "slno": 1210000014,
+      "productid": "P097",
+      "Producttype": "Laptop",
+      "Productmodel": "JBM09",
+      "Productstatus": "Active",
+      "empid": "DOTA2",
+      "productbrand": "JBM",
+      "productserialno": "wer45"
+    },
+    {
+      "slno": 1210000021,
+      "productid": "P0977",
+      "Producttype": "Laptop",
+      "Productmodel": "JBM09",
+      "Productstatus": "Active",
+      "empid": "DOTA22",
+      "productbrand": "JBM",
+      "productserialno": "wer45"
+    },
+    {
+      "slno": 1210000024,
+      "productid": "P09776",
+      "Producttype": "Laptop",
+      "Productmodel": "JBM09",
+      "Productstatus": "Active",
+      "empid": "DOTA222",
+      "productbrand": "JBM",
+      "productserialno": "wer45"
+    },
+    {
+      "slno": 1210000016,
+      "productid": "P0978",
+      "Producttype": "Laptop",
+      "Productmodel": "JBM09",
+      "Productstatus": "Available",
+      "empid": "DOTA23",
+      "productbrand": "JBM",
+      "productserialno": "wer45"
+    },
+    {
+      "slno": 45,
+      "productid": "pPXc56",
+      "Producttype": "Charger",
+      "Productmodel": "HP009",
+      "Productstatus": "Defective",
+      "empid": "jhuyh6",
+      "productbrand": "HP",
+      "productserialno": "i97ybn"
+    },
+    {
+      "slno": 6709,
+      "productid": "qh",
+      "Producttype": null,
+      "Productmodel": "wbwkjqms",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "bsjk",
+      "productserialno": ",njkhkqs"
+    },
+    {
+      "slno": 938,
+      "productid": "qwsadg",
+      "Producttype": "Laptop",
+      "Productmodel": "dfgvc",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "dp",
+      "productserialno": "drp897"
+    },
+    {
+      "slno": 66666,
+      "productid": "rrrr",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Available",
+      "empid": "wewe1",
+      "productbrand": "fwwwwf",
+      "productserialno": ""
+    },
+    {
+      "slno": 109,
+      "productid": "super30",
+      "Producttype": "Charger",
+      "Productmodel": "supra12",
+      "Productstatus": "Active",
+      "empid": "emp9008",
+      "productbrand": "jp",
+      "productserialno": "ko76"
+    },
+    {
+      "slno": 2,
+      "productid": "w",
+      "Producttype": "Charger",
+      "Productmodel": "",
+      "Productstatus": "Defective",
+      "empid": "",
+      "productbrand": "",
+      "productserialno": "w"
+    },
+    {
+      "slno": 3478,
+      "productid": "w2e3",
+      "Producttype": "Laptop",
+      "Productmodel": "ghghghgh",
+      "Productstatus": "Active",
+      "empid": "fdr4",
+      "productbrand": "das",
+      "productserialno": ""
+    },
+    {
+      "slno": 1289,
+      "productid": "wecv4",
+      "Producttype": "Laptop",
+      "Productmodel": "gyuy",
+      "Productstatus": "Active",
+      "empid": "emp00983",
+      "productbrand": "chapri",
+      "productserialno": ""
+    },
+    {
+      "slno": 76543,
+      "productid": "wererer1223",
+      "Producttype": "Laptop",
+      "Productmodel": "wesv2",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 69,
+      "productid": "wersdrt",
+      "Producttype": "Laptop",
+      "Productmodel": "eqweqweqweqw",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "eqweqeqw",
+      "productserialno": "werwe"
+    },
+    {
+      "slno": 126784,
+      "productid": "wev3",
+      "Producttype": "HeadSet",
+      "Productmodel": "",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 1111,
+      "productid": "wheiwjqewqe",
+      "Producttype": "Laptop",
+      "Productmodel": "eqweqw",
+      "Productstatus": "Available",
+      "empid": "eqweqweqw",
+      "productbrand": "eqweqweq",
+      "productserialno": "eqweqweqw"
+    },
+    {
+      "slno": 1210000009,
+      "productid": "wn12",
+      "Producttype": "Mouse",
+      "Productmodel": "robo",
+      "Productstatus": "Active",
+      "empid": "333hhhhh",
+      "productbrand": "hg",
+      "productserialno": "1h1h1"
+    },
+    {
+      "slno": 131,
+      "productid": "wqwqw",
+      "Producttype": "Laptop",
+      "Productmodel": "fwff",
+      "Productstatus": "Active",
+      "empid": null,
+      "productbrand": "dsds",
+      "productserialno": "ewqeqeq"
+    },
+    {
+      "slno": 1209,
+      "productid": "wsx",
+      "Producttype": "Laptop",
+      "Productmodel": "",
+      "Productstatus": "Defective",
+      "empid": "dfg",
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 128745,
+      "productid": "wwwwwww12",
+      "Producttype": "Laptop",
+      "Productmodel": "dedee222",
+      "Productstatus": "Defective",
+      "empid": null,
+      "productbrand": "",
+      "productserialno": ""
+    },
+    {
+      "slno": 7893,
+      "productid": "youtube123",
+      "Producttype": "Laptop",
+      "Productmodel": "dellg3",
+      "Productstatus": "Defective",
+      "empid": "limpi9",
+      "productbrand": "zipy",
+      "productserialno": "soka123"
+    }
+  ],
+  "employee": [
+    {
+      "empid": "",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "125698",
+      "empname": "gupu",
+      "empdesignation": "manager",
+      "laptoppassword": "123456",
+      "emailpassword": "12"
+    },
+    {
+      "empid": "19",
+      "empname": "harsita",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "333hhhhh",
+      "empname": "hdgakhsdgakshdgaskdgas",
+      "empdesignation": "daskdkbaskdhbaskhdaskdhas",
+      "laptoppassword": "ddd",
+      "emailpassword": "dddse"
+    },
+    {
+      "empid": "987867878",
+      "empname": "Harsita",
+      "empdesignation": "soft",
+      "laptoppassword": "askshdj",
+      "emailpassword": "sadasd"
+    },
+    {
+      "empid": "adt",
+      "empname": "Manas Ku",
+      "empdesignation": "Intern",
+      "laptoppassword": "try7868",
+      "emailpassword": "manas90"
+    },
+    {
+      "empid": "adty90",
+      "empname": "Manas Ku",
+      "empdesignation": "Intern",
+      "laptoppassword": "try7868",
+      "emailpassword": "manas90"
+    },
+    {
+      "empid": "atot",
+      "empname": "gupu",
+      "empdesignation": "kt",
+      "laptoppassword": "upou",
+      "emailpassword": "rtyi"
+    },
+    {
+      "empid": "bxmawxs",
+      "empname": "bjxs",
+      "empdesignation": ",jxs",
+      "laptoppassword": "bnsnax wb",
+      "emailpassword": "bmsmabx"
+    },
+    {
+      "empid": "Deba77",
+      "empname": "Debakanta",
+      "empdesignation": "Software Developer 012",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "Deba7712",
+      "empname": "Deb12a",
+      "empdesignation": "Software Developer",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "derty122",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "dfg",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "DOTA2",
+      "empname": "SHiva",
+      "empdesignation": "",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "DOTA22",
+      "empname": "SHiva",
+      "empdesignation": "",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "DOTA222",
+      "empname": "SHiva",
+      "empdesignation": "",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "DOTA23",
+      "empname": "SHiva",
+      "empdesignation": "",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "ed",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "dd",
+      "emailpassword": "dd"
+    },
+    {
+      "empid": "emp0000008",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "emp009",
+      "empname": "Cikaas",
+      "empdesignation": "SDE",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "emp0097",
+      "empname": "Cikaas",
+      "empdesignation": "SDE",
+      "laptoppassword": null,
+      "emailpassword": null
+    },
+    {
+      "empid": "emp00983",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "emp09876",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "emp9008",
+      "empname": "dsdsds2",
+      "empdesignation": "we23",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "eny7",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "eqweqweqw",
+      "empname": "eqweqweqw",
+      "empdesignation": "eqweqw",
+      "laptoppassword": "eqweqwe",
+      "emailpassword": "eqweqweqw"
+    },
+    {
+      "empid": "ewew222",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "fdr4",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "fr45",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "fx3",
+      "empname": "frtyu",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "g50s2",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "hpnew123",
+      "empname": "hpnew",
+      "empdesignation": "SOFTddd",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "ind32",
+      "empname": "vikas",
+      "empdesignation": "sde",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "jhuyh6",
+      "empname": "NN",
+      "empdesignation": "SOFTware",
+      "laptoppassword": "skjdkj",
+      "emailpassword": "ajskdfjask"
+    },
+    {
+      "empid": "limpi9",
+      "empname": "fargu",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "qd",
+      "empname": "cw",
+      "empdesignation": "edwd",
+      "laptoppassword": "cewf",
+      "emailpassword": "fwsf"
+    },
+    {
+      "empid": "qwaszx",
+      "empname": "qwer",
+      "empdesignation": "wq",
+      "laptoppassword": "wqwq",
+      "emailpassword": "wqqwqwq"
+    },
+    {
+      "empid": "su222dokuuuuuu126",
+      "empname": "",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sudo",
+      "empname": "sudolo",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sudo12",
+      "empname": "sudolo",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sudo126",
+      "empname": "sudolo",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sudoku126",
+      "empname": "sudolo",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sudokuuuu126",
+      "empname": "sudolo",
+      "empdesignation": "great",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "sx32",
+      "empname": "",
+      "empdesignation": "werererer",
+      "laptoppassword": "dedededed",
+      "emailpassword": "deedede"
+    },
+    {
+      "empid": "wemi888",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "wert45",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "werwqg",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "wewe1",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    },
+    {
+      "empid": "wwww",
+      "empname": "",
+      "empdesignation": "",
+      "laptoppassword": "",
+      "emailpassword": ""
+    }
+  ],
+  "history": [
+    {
+      "empid": "adty90",
+      "productid": "P001",
+      "issuedate": "2024-01-14T18:30:00.000Z",
+      "returndate": "2024-06-14T18:30:00.000Z"
+    },
+    {
+      "empid": "Deba77",
+      "productid": "P0012",
+      "issuedate": "2024-07-07T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "ed",
+      "productid": "w",
+      "issuedate": "2024-07-23T18:30:00.000Z",
+      "returndate": "2024-07-24T18:30:00.000Z"
+    },
+    {
+      "empid": "jhuyh6",
+      "productid": "pPXc56",
+      "issuedate": "2024-07-17T18:30:00.000Z",
+      "returndate": "2024-07-17T18:30:00.000Z"
+    },
+    {
+      "empid": "eqweqweqw",
+      "productid": "wheiwjqewqe",
+      "issuedate": "2024-07-19T18:30:00.000Z",
+      "returndate": "2024-07-05T18:30:00.000Z"
+    },
+    {
+      "empid": "bxmawxs",
+      "productid": "hjq",
+      "issuedate": "2024-07-08T18:30:00.000Z",
+      "returndate": "2024-03-26T18:30:00.000Z"
+    },
+    {
+      "empid": "987867878",
+      "productid": "Hu67",
+      "issuedate": "2024-06-30T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "atot",
+      "productid": "dasdasdasdas",
+      "issuedate": "2024-07-26T18:30:00.000Z",
+      "returndate": "2024-07-17T18:30:00.000Z"
+    },
+    {
+      "empid": "125698",
+      "productid": "211113",
+      "issuedate": "2024-06-29T18:30:00.000Z",
+      "returndate": "2024-07-17T18:30:00.000Z"
+    },
+    {
+      "empid": "qwaszx",
+      "productid": "111222121212",
+      "issuedate": "2024-07-30T18:30:00.000Z",
+      "returndate": "2024-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "werwqg",
+      "productid": "ewq",
+      "issuedate": "2024-08-01T18:30:00.000Z",
+      "returndate": "2024-08-09T18:30:00.000Z"
+    },
+    {
+      "empid": "333hhhhh",
+      "productid": "wn12",
+      "issuedate": "2024-07-26T18:30:00.000Z",
+      "returndate": "2024-07-27T18:30:00.000Z"
+    },
+    {
+      "empid": "dfg",
+      "productid": "wsx",
+      "issuedate": "2024-07-24T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "fdr4",
+      "productid": "w2e3",
+      "issuedate": "2024-07-26T18:30:00.000Z",
+      "returndate": "2024-07-22T18:30:00.000Z"
+    },
+    {
+      "empid": "Deba7712",
+      "productid": "P0010",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2009-07-24T18:30:00.000Z"
+    },
+    {
+      "empid": "sudo",
+      "productid": "atr3",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-24T18:30:00.000Z"
+    },
+    {
+      "empid": "sudo12",
+      "productid": "atr39",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "sudo126",
+      "productid": "atr399",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "sudoku126",
+      "productid": "a399",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "sudokuuuu126",
+      "productid": "a3b99",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "emp9008",
+      "productid": "super30",
+      "issuedate": "2024-07-22T18:30:00.000Z",
+      "returndate": "2024-07-26T18:30:00.000Z"
+    },
+    {
+      "empid": "emp09876",
+      "productid": "120956",
+      "issuedate": "2024-07-27T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "fr45",
+      "productid": "42345",
+      "issuedate": "2024-07-14T18:30:00.000Z",
+      "returndate": "2024-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "hpnew123",
+      "productid": "12904537",
+      "issuedate": "2024-07-26T18:30:00.000Z",
+      "returndate": "2024-07-28T18:30:00.000Z"
+    },
+    {
+      "empid": "emp00983",
+      "productid": "wecv4",
+      "issuedate": "2024-07-02T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "wert45",
+      "productid": "gf32",
+      "issuedate": "2024-07-04T18:30:00.000Z",
+      "returndate": "2024-07-18T18:30:00.000Z"
+    },
+    {
+      "empid": "g50s2",
+      "productid": "g50",
+      "issuedate": "2024-07-02T18:30:00.000Z",
+      "returndate": "2024-07-19T18:30:00.000Z"
+    },
+    {
+      "empid": "eny7",
+      "productid": "32uye",
+      "issuedate": "2024-07-03T18:30:00.000Z",
+      "returndate": "2024-07-16T18:30:00.000Z"
+    },
+    {
+      "empid": "limpi9",
+      "productid": "youtube123",
+      "issuedate": "2024-07-11T18:30:00.000Z",
+      "returndate": "2024-07-12T18:30:00.000Z"
+    },
+    {
+      "empid": "fx3",
+      "productid": "ghhghghgh7",
+      "issuedate": "2024-07-03T18:30:00.000Z",
+      "returndate": "2024-07-12T18:30:00.000Z"
+    },
+    {
+      "empid": "sx32",
+      "productid": "23er",
+      "issuedate": "2024-07-08T18:30:00.000Z",
+      "returndate": "2024-07-12T18:30:00.000Z"
+    },
+    {
+      "empid": "su222dokuuuuuu126",
+      "productid": "a32b",
+      "issuedate": "2005-07-23T18:30:00.000Z",
+      "returndate": "2005-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "wemi888",
+      "productid": "ker1",
+      "issuedate": "2024-07-23T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "emp0000008",
+      "productid": "gddd12",
+      "issuedate": "2024-07-19T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "19",
+      "productid": "harsita",
+      "issuedate": "2024-07-09T18:30:00.000Z",
+      "returndate": "2024-07-26T18:30:00.000Z"
+    },
+    {
+      "empid": "qd",
+      "productid": "hi",
+      "issuedate": "2024-07-24T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "derty122",
+      "productid": "new1",
+      "issuedate": "2024-06-30T18:30:00.000Z",
+      "returndate": "2024-07-02T18:30:00.000Z"
+    },
+    {
+      "empid": "wwww",
+      "productid": "23w",
+      "issuedate": "2024-07-25T18:30:00.000Z",
+      "returndate": "2024-07-30T18:30:00.000Z"
+    },
+    {
+      "empid": "wewe1",
+      "productid": "rrrr",
+      "issuedate": "2024-07-25T18:30:00.000Z",
+      "returndate": "2024-08-09T18:30:00.000Z"
+    },
+    {
+      "empid": "ind32",
+      "productid": "p004",
+      "issuedate": "2024-07-18T18:30:00.000Z",
+      "returndate": "2024-07-18T18:30:00.000Z"
+    },
+    {
+      "empid": "adt",
+      "productid": "P006",
+      "issuedate": null,
+      "returndate": null
+    },
+    {
+      "empid": "emp009",
+      "productid": "P007",
+      "issuedate": "2024-07-09T18:30:00.000Z",
+      "returndate": "2024-07-24T18:30:00.000Z"
+    },
+    {
+      "empid": "ewew222",
+      "productid": "p0098",
+      "issuedate": "2024-07-09T18:30:00.000Z",
+      "returndate": "2024-07-17T18:30:00.000Z"
+    },
+    {
+      "empid": "DOTA2",
+      "productid": "P097",
+      "issuedate": "2024-07-09T18:30:00.000Z",
+      "returndate": "2024-07-26T18:30:00.000Z"
+    },
+    {
+      "empid": "DOTA23",
+      "productid": "P0978",
+      "issuedate": "2024-07-10T18:30:00.000Z",
+      "returndate": "2024-07-18T18:30:00.000Z"
+    },
+    {
+      "empid": "DOTA22",
+      "productid": "P0977",
+      "issuedate": "2024-07-18T18:30:00.000Z",
+      "returndate": "2024-07-25T18:30:00.000Z"
+    },
+    {
+      "empid": "DOTA222",
+      "productid": "P09776",
+      "issuedate": "2024-07-17T18:30:00.000Z",
+      "returndate": "2024-07-19T18:30:00.000Z"
+    },
+    {
+      "empid": "emp0097",
+      "productid": "P0077",
+      "issuedate": "2024-07-18T18:30:00.000Z",
+      "returndate": "2024-07-10T18:30:00.000Z"
+    },
+    {
+      "empid": "emp0097",
+      "productid": "P00773",
+      "issuedate": "2024-07-17T18:30:00.000Z",
+      "returndate": "2024-07-29T18:30:00.000Z"
+    }
+  ]
+}

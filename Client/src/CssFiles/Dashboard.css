@@ -1,0 +1,22 @@
+/* dashboard.css
+.MuiPagination-root {
+    display: flex;
+    justify-content:end;
+  
+    margin-top: 20px;
+  }
+  
+  .MuiPaginationItem-root {
+    font-size: 1rem;
+    margin: 0 2px;
+  }
+  
+  .MuiPaginationItem-page.Mui-selected {
+    background-color: #1976d2;
+    color: white;
+  }
+  
+  .MuiPaginationItem-page:hover {
+    background-color: #f0f0f0;
+  }
+   */
