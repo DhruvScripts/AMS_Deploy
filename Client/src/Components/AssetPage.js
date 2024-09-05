@@ -26,14 +26,16 @@ import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useMsal } from "@azure/msal-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AssetPage = () => {
+  const { accounts, instance } = useMsal();
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [limit] = useState(10);
+  const [limit] = useState(5);
   const [search, setSearch] = useState("");
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
@@ -41,28 +43,52 @@ const AssetPage = () => {
 
   const [newProduct, setNewProduct] = useState({
     slno: "",
+    idType: "assets",
     productid: "",
     producttype: "Laptop",
     productmodel: "",
     status: "Active",
+    empid: "",
     productbrand: "",
     productserialno: "",
   });
+  const [errors, setErrors] = useState({});
+  const [errorMessage, setErrorMessage] = useState('');
+  const [productExists, setProductExists] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
+  const [originalProductId, setOriginalProductId] = useState('');
   const [open, setOpen] = useState(false);
 
+  const acquireToken = async () => {
+    const request = {
+      scopes: ["user.read"],
+      account: accounts[0]
+    };
+
+    try {
+      const response = await instance.acquireTokenSilent(request);
+      return response.accessToken;
+    } catch (error) {
+      console.error(error);
+      instance.acquireTokenRedirect(request);
+    }
+  };
 
   const fetchProduct = async (pageToFetch) => {
     try {
+      const token = await acquireToken();
       const response = await axios.get("http://localhost:8000/api/v1/asset/paginateAsset", {
         params: {
           page: pageToFetch,
           limit,
         },
-      
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
       setProducts(response.data.data);
       setTotalPages(response.data.pagination.totalPages);
+      console.log(totalPages)
     } catch (error) {
       console.log(error);
       setProducts([]); // Ensure products is always an array
@@ -73,14 +99,16 @@ const AssetPage = () => {
   const fetchSearchResults = async (pageToFetch, searchTermToUse) => {
     try {
       setLoading(true);
-      
-      const response = await axios.get(`http://localhost:8000/api/v1/asset/searchAsset`, {
+      const token = await acquireToken();
+      const response = await axios.get(`http://localhost:8000/api/v1/asset/assetssearch`, {
         params: {
           page: pageToFetch,
           limit,
           searchTerm: searchTermToUse
         },
-      
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       });
       setProducts(response.data.data);
       setTotalPages(response.data.totalPages);
@@ -131,36 +159,10 @@ const AssetPage = () => {
 
   const handleClickOpen = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleAdd = async () => {
-    if (editingProduct) {
-      setProducts(
-        products.map((product) =>
-          product.id === editingProduct.id ? newProduct : product
-        )
-      );
-    } else {
-      try {
-        console.log("New Product:", newProduct); // Log the new product data
-       
-        await axios.post("http://localhost:8000/api/v1/asset/assets", newProduct, {
-          
-        });
-        setProducts([...products, { ...newProduct, id: products.length + 1 }]);
-        fetchProduct(page);
-        setOpen(false);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    setOpen(false);
+    setEditingProduct(null);
     setNewProduct({
       slno: "",
+      idType: "assets",
       productid: "",
       producttype: "Laptop",
       productmodel: "",
@@ -169,11 +171,118 @@ const AssetPage = () => {
       productbrand: "",
       productserialno: "",
     });
+    setErrors({});
+    setErrorMessage('');
+    setProductExists(false);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setErrors({});
+    setErrorMessage('');
+  };
+
+  const validate = () => {
+    let tempErrors = {};
+    const requiredFields = ['productid', 'productmodel', 'productbrand', 'productserialno'];
+    requiredFields.forEach(field => {
+      if (!newProduct[field]) {
+        tempErrors[field] = `${field.split(/(?=[A-Z])/).join(' ')} is required.`;
+      }
+    });
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every(x => x === "");
+  };
+
+  const checkProductId = async (productid) => {
+    if (editingProduct && productid === originalProductId) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        productid: '',
+      }));
+      return;
+    }
+
+    try {
+      const token = await acquireToken();
+      const response = await axios.post('http://localhost:8000/api/v1/asset/checkpid', { productid }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setProductExists(response.data.message === true);
+      if (response.data.message === true) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          productid: 'Product ID already exists.',
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          productid: '',
+        }));
+      }
+    } catch (error) {
+      console.error('Error checking product ID:', error);
+    }
+  };
+
+  const handleAdd = async () => {
+    if (!validate() || productExists) return;
+
+    const productWithIdType = { ...newProduct, idType: 'assets' }; // Ensure idType is included
+
+    if(editingProduct){
+      try{
+        console.log("Editing Product:", productWithIdType); // Log the new product data
+        const token = await acquireToken();
+        await axios.put(`http://localhost:8000/api/v1/asset/edit/${productWithIdType.productid}`,
+          productWithIdType,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          }
+        );
+        fetchProduct(page); // Refresh the product list
+        setOpen(false);
+        toast.success("Product updated successfully");
+      }
+      catch(error){
+        console.log("Error updating product:", error);
+        setErrorMessage(error.response?.data?.error || 'Failed to update product');
+      }
+    } else {
+      try {
+        console.log("New Product:", productWithIdType); // Log the new product data
+        const token = await acquireToken();
+        await axios.post("http://localhost:8000/api/v1/asset/assets", productWithIdType, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
+        setProducts([...products, { ...productWithIdType, id: products.length + 1 }]);
+        fetchProduct(page);
+        setOpen(false);
+        toast.success("Product added successfully");
+      } catch (error) {
+        console.log("Error adding product:", error);
+        setErrorMessage(error.response?.data?.error || 'Failed to add product');
+      }
+    }
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewProduct({ ...newProduct, [name]: value });
+    if (name === 'productid') {
+      setProductExists(false);
+    }
+  };
+
+  const handleBlur = (e) => {
+    const { value } = e.target;
+    checkProductId(value);
   };
 
   const getStatusColor = (status) => {
@@ -191,8 +300,11 @@ const AssetPage = () => {
 
   const handleEdit = (product) => {
     setEditingProduct(product);
+    setOriginalProductId(product.productid);
     setNewProduct(product);
     setOpen(true);
+    setErrors({});
+    setErrorMessage('');
   };
 
   return (
@@ -239,6 +351,11 @@ const AssetPage = () => {
           <DialogContentText>
             Please fill in the details of the {editingProduct ? "product" : "new product"}.
           </DialogContentText>
+          {errorMessage && (
+            <DialogContentText color="error">
+              {errorMessage}
+            </DialogContentText>
+          )}
           {['productid', 'productmodel', 'productbrand', 'productserialno'].map((field) => (
             <TextField
               key={field}
@@ -249,6 +366,9 @@ const AssetPage = () => {
               fullWidth
               value={newProduct[field]}
               onChange={handleChange}
+              onBlur={field === 'productid' ? handleBlur : null}
+              error={Boolean(errors[field])}
+              helperText={errors[field]}
               style={{ marginBottom: '8px' }}
             />
           ))}
@@ -277,6 +397,18 @@ const AssetPage = () => {
             <MenuItem value="Available">Available</MenuItem>
             <MenuItem value="Defective">Defective</MenuItem>
           </Select>
+          {newProduct.status === "Active" && (
+            <TextField
+              margin="dense"
+              name="empid"
+              label="Employee ID"
+              type="text"
+              fullWidth
+              value={newProduct.empid}
+              onChange={handleChange}
+              style={{ marginBottom: '8px' }}
+            />
+          )}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
@@ -305,7 +437,7 @@ const AssetPage = () => {
                 ].map((header) => (
                   <TableCell
                     key={header}
-                    style={{ whiteSpace: "pre-line", padding: "16px" }}
+                    style={{ whiteSpace: "pre-line", padding: "10px" }}
                   >
                     {header.split(" ").join("\n")}
                   </TableCell>
@@ -315,33 +447,34 @@ const AssetPage = () => {
             <TableBody>
               {filteredProducts.map((product) => (
                 <TableRow key={product.productid}>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.slno}
                   </TableCell>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.productid}
                   </TableCell>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.producttype}
                   </TableCell>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.productmodel}
                   </TableCell>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.productbrand}
                   </TableCell>
-                  <TableCell style={{ padding: "16px" }}>
+                  <TableCell style={{ padding: "10px" }}>
                     {product.productserialno}
                   </TableCell>
                   <TableCell
                     style={{
-                      padding: "16px",
+                      padding: "10px",
                       color: getStatusColor(product.status),
                     }}
                   >
                     {product.status}
                   </TableCell>
-                  <TableCell style={{ padding: "16px", display: 'flex', justifyContent: 'center' }}>
+                  
+                  <TableCell style={{ padding: "10px", display: 'flex', justifyContent: 'center' }}>
                     <IconButton
                       color="primary"
                       onClick={() => handleEdit(product)}
@@ -374,10 +507,3 @@ const AssetPage = () => {
 };
 
 export default AssetPage;
-
-
-
-
-//  -------- PENDING -------------
- // I remove the token out of the code..
- // I also didn't add the azure auth..

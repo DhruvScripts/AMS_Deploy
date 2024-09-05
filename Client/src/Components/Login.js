@@ -1,9 +1,16 @@
 import React from 'react';
-import { Container, Typography, TextField, Button, Box } from '@mui/material';
+import { Container, Typography, Button, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
- 
+
+
 const Login = () => {
-    const navigate = useNavigate();
+  //const { instance } = useMsal();
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+      navigate("/dashboard")
+  };
+
   return (
     <div style={{ backgroundColor: '#000', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Container maxWidth="xs">
@@ -17,77 +24,21 @@ const Login = () => {
           <Typography variant="h4" sx={{ color: '#fff', marginBottom: '20px', textAlign: 'center' }}>
             Login to Your Account
           </Typography>
- 
-          <form>
-            <TextField
-              type="email"
-              variant="outlined"
-              fullWidth
-              placeholder="Enter Email ID"
-              sx={{
-                marginBottom: '20px',
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: '#fff',
-                    borderRadius: '10px',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: '#fff',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: '#fff',
-                  },
-                },
-              }}
-              InputProps={{
-                sx: { color: '#fff' },
-              }}
-              InputLabelProps={{ sx: { color: '#fff' } }}
-            />
- 
-            <TextField
-              type="password"
-              variant="outlined"
-              fullWidth
-              placeholder="Enter Password"
-              sx={{
-                marginBottom: '20px',
-                '& .MuiOutlinedInput-root': {
-                  '& fieldset': {
-                    borderColor: '#fff',
-                    borderRadius: '10px',
-                  },
-                  '&:hover fieldset': {
-                    borderColor: '#fff',
-                  },
-                  '&.Mui-focused fieldset': {
-                    borderColor: '#fff',
-                  },
-                },
-              }}
-              InputProps={{
-                sx: { color: '#fff' },
-              }}
-              InputLabelProps={{ sx: { color: '#fff' } }}
-            />
- 
-            <Button
-              onClick={()=>navigate("/dashboard")}
-              type="submit"
-              variant="contained"
-              color="primary"
-              fullWidth
-              sx={{
-                backgroundColor: '#fff',
-                color: '#111',
-                '&:hover': { backgroundColor: '#f2f2f2' },
-                marginBottom: '20px',
-              }}
-            >
-              Login
-            </Button>
-          </form>
- 
+          <Button
+            onClick={handleLogin}
+            type="button"
+            variant="contained"
+            color="primary"
+            fullWidth
+            sx={{
+              backgroundColor: '#fff',
+              color: '#111',
+              '&:hover': { backgroundColor: '#f2f2f2' },
+              marginBottom: '20px',
+            }}
+          >
+            Login with Azure AD
+          </Button>
           <Typography variant="body2" sx={{ color: '#fff', textAlign: 'center' }}>
             By using this app, you agree to our
             <span style={{ color: '#2196f3', paddingLeft: '4px' }}>
@@ -99,5 +50,5 @@ const Login = () => {
     </div>
   );
 };
- 
+
 export default Login;

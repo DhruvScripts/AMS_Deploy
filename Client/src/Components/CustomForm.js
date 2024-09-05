@@ -1,4 +1,4 @@
-  import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, IconButton, MenuItem, Select
 } from '@mui/material';
@@ -12,28 +12,41 @@ import "../CssFiles/Table.css";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useMsal } from '@azure/msal-react';
+import Navbar2 from './Navbar2'
+
+
 
 const CustomForm = () => {
-const [products, setProducts] = useState([]);
+  const { accounts, instance } = useMsal();
+  const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const [limit] = useState(3);
+  const [limit] = useState(10);
   const [totalPages, setTotalPages] = useState(1);
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchTriggered, setSearchTriggered] = useState(false); 
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
+  const [productExists, setProductExists] = useState(false);
+  const [originalProductId, setOriginalProductId] = useState('');
+  const [searchTriggered, setSearchTriggered] = useState(false);
+
+
 
   const fetchDashboardData = async (pageToFetch) => {
     try {
       setLoading(true);
+      const token = await acquireToken();
       const response = await axios.get(`http://localhost:8000/api/v1/asset/paginateDashboard`, {
         params: {
           page: pageToFetch,
           limit
+        },
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       });
-      setProducts(response.data.data);  
+      setProducts(response.data.data);
       setTotalPages(response.data.totalPages);
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
@@ -45,11 +58,15 @@ const [products, setProducts] = useState([]);
   const fetchSearchResults = async (pageToFetch, searchTermToUse) => {
     try {
       setLoading(true);
+      const token = await acquireToken();
       const response = await axios.get(`http://localhost:8000/api/v1/asset/search`, {
         params: {
           page: pageToFetch,
           limit,
           searchTerm: searchTermToUse
+        },
+        headers: {
+          Authorization: `Bearer ${token}`
         }
       });
       setProducts(response.data.data);
@@ -58,6 +75,21 @@ const [products, setProducts] = useState([]);
       console.error('Error fetching search results:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const acquireToken = async () => {
+    const request = {
+      scopes: ["user.read"],
+      account: accounts[0]
+    };
+
+    try {
+      const response = await instance.acquireTokenSilent(request);
+      return response.accessToken;
+    } catch (error) {
+      console.error(error);
+      instance.acquireTokenRedirect(request);
     }
   };
 
@@ -73,13 +105,14 @@ const [products, setProducts] = useState([]);
     } else {
       fetchDashboardData(page);
     }
-  }, [page, searchTriggered]); // Changed the dependency to searchTriggered
+  }, [page, searchTriggered]);
+
 
   const handleSearchChange = (e) => {
     const { value } = e.target;
     setSearchTerm(value);
   };
-
+ 
   const handleEnterKeyPress = (e) => {
     if (e.key === 'Enter') {
       handleSearch();
@@ -87,7 +120,7 @@ const [products, setProducts] = useState([]);
       fetchDashboardData(1); // Fetch dashboard data when backspace clears search term
     }
   };
-
+ 
   const handlePageChange = (event, value) => {
     setPage(value);
   };
@@ -109,6 +142,7 @@ const [products, setProducts] = useState([]);
     });
     setErrors({});
     setErrorMessage('');
+    setProductExists(false);
     setOpen(true);
   };
 
@@ -133,15 +167,57 @@ const [products, setProducts] = useState([]);
     return Object.values(tempErrors).every(x => x === "");
   };
 
-  const handleAdd = async () => {
-    if (!validate()) return;
+  const checkProductId = async (productid) => {
+    if (editingProduct && productid === originalProductId) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        productid: '',
+      }));
+      return;
+    }
 
     try {
+      const token = await acquireToken();
+      const response = await axios.post('http://localhost:8000/api/v1/asset/checkpid', { productid }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      setProductExists(response.data.message === true);
+      if (response.data.message === true) {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          productid: 'Product ID already exists.',
+        }));
+      } else {
+        setErrors((prevErrors) => ({
+          ...prevErrors,
+          productid: '',
+        }));
+      }
+    } catch (error) {
+      console.error('Error checking product ID:', error);
+    }
+  };
+
+  const handleAdd = async () => {
+    if (!validate() || productExists) return;
+
+    try {
+      const token = await acquireToken();
       if (editingProduct) {
-        await axios.put(`http://localhost:8000/api/v1/asset/editall/${newProduct.productid}`, newProduct);
+        await axios.put(`http://localhost:8000/api/v1/asset/editall/${newProduct.productid}`, newProduct, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
         toast.success('User updated successfully.');
       } else {
-        await axios.post("http://localhost:8000/api/v1/asset/assetempdetails", newProduct);
+        await axios.post("http://localhost:8000/api/v1/asset/assetempdetails", newProduct, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
         toast.success('User added successfully.');
       }
       fetchDashboardData(page);
@@ -164,6 +240,15 @@ const [products, setProducts] = useState([]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewProduct({ ...newProduct, [name]: value });
+    if (name === 'productid') {
+      setProductExists(false);
+    }
+  };
+
+  const handleBlur = (e) => {
+    if (e.target.name === 'productid') {
+      checkProductId(e.target.value);
+    }
   };
 
   const formatDate = (date) => {
@@ -180,6 +265,7 @@ const [products, setProducts] = useState([]);
 
   const handleEdit = (product) => {
     setEditingProduct(product);
+    setOriginalProductId(product.productid); // Set the original product ID
     setNewProduct({
       ...product,
       issuedate: product.issuedate ? formatDate(product.issuedate) : '',
@@ -204,8 +290,13 @@ const [products, setProducts] = useState([]);
   return (
     <>
       <div className="navbar-fixed">
-        <Navbar />
+      {/* <Navbar
+          searchTerm={searchTerm}
+          handleSearchChange={handleSearchChange}
+          handleEnterKeyPress={handleEnterKeyPress}
+          /> */}
       </div>
+          <Navbar2/>
       <div className="searchbar-container">
         <div>
           <TextField
@@ -219,17 +310,18 @@ const [products, setProducts] = useState([]);
           />
           <Button
             variant="contained"
-            color="primary"
             onClick={handleSearch}
+            sx={{ backgroundColor: '#A6E3E9' }}
           >
             Search
           </Button>
         </div>
         <Button
           variant="contained"
-          color="primary"
+          
           onClick={handleClickOpen}
           startIcon={<Add />}
+          sx={{ backgroundColor: '#A6E3E9',color:"#111", fontWeight:"600" }}
         >
           Add New
         </Button>
@@ -258,6 +350,7 @@ const [products, setProducts] = useState([]);
               fullWidth
               value={newProduct[field]}
               onChange={handleChange}
+              onBlur={handleBlur}
               error={Boolean(errors[field])}
               helperText={errors[field]}
               style={{ marginBottom: '8px' }}
@@ -284,8 +377,8 @@ const [products, setProducts] = useState([]);
             fullWidth
             style={{ marginBottom: '8px' }}
           >
-            <MenuItem value="Active">Active</MenuItem>
-            <MenuItem value="Available">Available</MenuItem>
+            <MenuItem value="Active">Assigned</MenuItem>
+            <MenuItem value="Available">Unassigned</MenuItem>
             <MenuItem value="Defective">Defective</MenuItem>
           </Select>
           <TextField
@@ -329,7 +422,7 @@ const [products, setProducts] = useState([]);
             <TableHead className='header-section'>
               <TableRow>
                 {['SI No.', 'Product ID', 'Product Type', 'Product Model', 'Product SerialNo', 'Product Brand', 'Employee Name', 'Employee Designation', 'Status', 'Employee ID', 'Issue Date', 'Return Date', 'Actions'].map((header) => (
-                  <TableCell key={header} style={{ whiteSpace: 'pre-line', padding: '16px' }}>
+                  <TableCell key={header} style={{ whiteSpace: 'pre-line', padding: '10px' }}>
                     {header.split(' ').join('\n')}
                   </TableCell>
                 ))}
@@ -338,19 +431,19 @@ const [products, setProducts] = useState([]);
             <TableBody>
               {products.map((product) => (
                 <TableRow key={product.id}>
-                  <TableCell style={{ padding: '16px' }}>{product.slno}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.productid}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.producttype}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.productmodel}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.productserialno}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.productbrand}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.empname}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.empdesignation}</TableCell>
-                  <TableCell style={{ padding: '16px', color: getStatusColor(product.status) }}>{product.status}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.empid}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.issuedate}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>{product.returndate}</TableCell>
-                  <TableCell style={{ padding: '16px' }}>
+                  <TableCell style={{ padding: '10px' }}>{product.slno}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.productid}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.producttype}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.productmodel}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.productserialno}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.productbrand}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.empname}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.empdesignation}</TableCell>
+                  <TableCell style={{ padding: '10px', color: getStatusColor(product.status) }}>{product.status}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.empid}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.issuedate}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>{product.returndate}</TableCell>
+                  <TableCell style={{ padding: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
                       <IconButton color="primary" onClick={() => handleEdit(product)}>
                         <Edit />
